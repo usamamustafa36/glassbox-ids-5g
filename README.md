@@ -22,7 +22,7 @@ but different labels (mainly benign vs UDPFlood), so no classifier can separate 
 computes that ceiling exactly and reports every model against it. The EBM reaches **0.7684** against
 a ceiling of 0.7685, and the best black box reaches 0.7640 (p = 6.5×10⁻⁵).
 
-![Binary comparison](Results/Research%20Objective%202%20-%20Glass-Box%20(EBM)%20Detector/figures/20_binary_comparison.png)
+![Binary comparison](Results/Research%20Objective%202%20-%20Glass-Box%20%28EBM%29%20Detector/figures/20_binary_comparison.png)
 
 **3. Post-hoc explanations disagree with each other and miss a known effect.** Two post-hoc
 explainers of the *same* model agree as little as **0.55**. Against an injected ground-truth effect,
