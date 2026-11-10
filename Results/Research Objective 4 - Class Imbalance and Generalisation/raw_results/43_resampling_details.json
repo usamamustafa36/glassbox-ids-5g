@@ -1,0 +1,30 @@
+{
+  "None (baseline)": {
+    "train_rows": 29999,
+    "how": "no treatment",
+    "status": "ok"
+  },
+  "Class weighting": {
+    "train_rows": 29999,
+    "how": "each flow weighted by the inverse frequency of its class; no rows added",
+    "status": "ok"
+  },
+  "SMOTE (SMOTENC)": {
+    "train_rows": 106083,
+    "how": "synthetic minority flows interpolated between each rare flow and its 5 nearest same-class neighbours; categorical features take the neighbours' most common value rather than being interpolated (SMOTENC)",
+    "status": "ok"
+  },
+  "Borderline-SMOTE": {
+    "train_rows": 94324,
+    "classes_it_could_not_oversample": [
+      "ICMPFlood"
+    ],
+    "how": "as SMOTE, but only near the decision boundary where confusion actually happens; classes with no borderline examples are left untouched",
+    "status": "ok"
+  },
+  "Random undersampling": {
+    "train_rows": 252,
+    "how": "majority classes randomly cut down to the size of the smallest class",
+    "status": "ok"
+  }
+}

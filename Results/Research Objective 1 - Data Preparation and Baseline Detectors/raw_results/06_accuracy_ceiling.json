@@ -1,0 +1,25 @@
+{
+  "binary": {
+    "ceiling_accuracy": 0.7684584954231057,
+    "irreducible_error": 0.23154150457689426,
+    "n_rows": 1215890,
+    "n_distinct_feature_vectors": 374933,
+    "n_rows_in_conflicting_groups": 632382,
+    "pct_rows_in_conflicting_groups": 52.00980351841038
+  },
+  "multiclass": {
+    "ceiling_accuracy": 0.768455205651827,
+    "irreducible_error": 0.231544794348173,
+    "n_rows": 1215890,
+    "n_distinct_feature_vectors": 374933,
+    "n_rows_in_conflicting_groups": 632391,
+    "pct_rows_in_conflicting_groups": 52.01054371694808
+  },
+  "classes_in_conflicting_groups": {
+    "UDPFlood": 350853,
+    "Benign": 281529,
+    "SYNScan": 4,
+    "TCPConnectScan": 3,
+    "UDPScan": 2
+  }
+}

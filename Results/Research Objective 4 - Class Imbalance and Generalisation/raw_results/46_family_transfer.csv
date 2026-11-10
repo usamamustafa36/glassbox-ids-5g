@@ -1,0 +1,7 @@
+family,nidd_importance,awid_importance,nidd_features_matched,awid_features_matched,nidd_share_pct,nidd_rank,awid_share_pct,awid_rank,rank_diff
+Path and signal quality,8.916267152136005,7.83741539362818,4,4,31.1,1,27.68,2,1
+Size and volume,5.528567626144835,4.4749982910750905,11,2,19.28,2,15.81,4,2
+Priority and control flags,5.203744992554617,0.2963959664142879,6,3,18.15,3,1.05,5,2
+Rate and timing,4.060814737290184,4.916173753613072,12,4,14.16,4,17.37,3,1
+Protocol and state,3.9248902884643755,10.689585502001997,3,3,13.69,5,37.76,1,4
+Reliability and loss,1.0348099162887099,0.09486174559321035,6,3,3.61,6,0.34,6,0

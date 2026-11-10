@@ -1,0 +1,124 @@
+<style>
+    :root{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#8b8a85;
+          --line:#e6e5e1;--blue:#2a78d6;--red:#e34948;--amber:#eda100;
+          --green:#008300;}
+    *{box-sizing:border-box}
+    body{margin:0;padding:2rem 1rem;background:var(--bg);color:var(--ink);
+         font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .wrap{max-width:820px;margin:0 auto}
+    h1{font-size:1.6rem;margin:0 0 .3rem}
+    .lede{color:var(--ink2);margin:0 0 2rem;max-width:62ch}
+    .card{border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.4rem;
+          margin:0 0 1.5rem;background:#fff}
+    .head{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;
+          border-bottom:1px solid var(--line);padding-bottom:.7rem;margin-bottom:.9rem}
+    .tag{font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.2rem .55rem;
+         border-radius:999px;color:#fff;text-transform:uppercase}
+    .t-attack{background:var(--red)} .t-benign{background:var(--green)}
+    .t-recon{background:var(--amber);color:#3a2800}
+    .title{font-size:1.15rem;font-weight:700;margin:0}
+    .conf{margin-left:auto;color:var(--ink2);font-variant-numeric:tabular-nums}
+    .what{color:var(--ink2);margin:0 0 1rem}
+    h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;
+       color:var(--muted);margin:1.2rem 0 .5rem}
+    ol{margin:0;padding-left:1.2rem} li{margin-bottom:.7rem}
+    .meta{color:var(--muted);font-size:.85rem}
+    .bar{height:6px;border-radius:3px;background:var(--blue);margin-top:.3rem}
+    .action{background:#f4f8fd;border-left:3px solid var(--blue);
+            padding:.7rem .9rem;border-radius:0 6px 6px 0;margin:.4rem 0 0}
+    .audit{margin-top:1.1rem;padding-top:.8rem;border-top:1px solid var(--line);
+           color:var(--muted);font-size:.82rem}
+    code{background:#f2f1ee;padding:.1rem .3rem;border-radius:4px;font-size:.85em}
+    table{border-collapse:collapse;width:100%;margin:.2rem 0 .6rem}
+    td{padding:.25rem .4rem;border-bottom:1px solid var(--line);font-size:.9rem}
+    td:first-child{color:var(--ink2);width:9rem}
+    @media(prefers-color-scheme:dark){
+      :root{--bg:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#8b8a85;--line:#3a3a37}
+      .card{background:#232321} .action{background:#1e2a38}
+      code{background:#2c2c29}
+    }
+    </style>
+<div class="wrap">
+<h1>Security Alerts - Explained</h1>
+<p class="lede">Each alert was produced by a glass-box detector. The reasons below are the model&rsquo;s own contributions, not an after-the-fact estimate, which is why the audit line on every card reconciles exactly. Generated from the <code>full</code> run &mdash; 8 alerts.</p>
+<div class="card"><div class="head"><span class="tag t-attack">ATTACK</span><p class="title">Alert 1 &mdash; HTTPFlood</p><span class="conf">confidence 99.5%</span></div>
+<table><tr><td>Severity</td><td>High</td></tr><tr><td>Flow reference</td><td>test row 105218</td></tr></table>
+<p class="what">A denial-of-service flood of HTTP requests designed to overwhelm a web service.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The destination DSCP class is cs0, whereas normal traffic usually shows &#x27;not-observed&#x27;. This pushes the decision towards an attack.<div class="meta">destination DSCP class = cs0 &middot; quality-of-service class in replies &middot; strength +4.38</div><div class="bar" style="width:100%"></div></li>
+<li>The throughput is 4,559 bits/s, in the top 8% for normal traffic (typical: 0 bits/s). This pushes the decision towards an attack.<div class="meta">throughput = 4,559 bits/s &middot; overall data rate of the flow &middot; strength +3.19</div><div class="bar" style="width:73%"></div></li>
+<li>The hop count from the destination was recorded for this flow. This pushes the decision towards an attack.<div class="meta">hop count from the destination not measurable = no &middot; there was no hop count from the destination to measure on this flow &middot; strength +3.17</div><div class="bar" style="width:72%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Apply request rate-limiting for the source; check web server load and enable challenge/CAPTCHA if available.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>39.218</code>; the model&rsquo;s actual output = <code>39.218</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-attack">ATTACK</span><p class="title">Alert 2 &mdash; ICMPFlood</p><span class="conf">confidence 100.0%</span></div>
+<table><tr><td>Severity</td><td>High</td></tr><tr><td>Flow reference</td><td>test row 224365</td></tr></table>
+<p class="what">A flood of ICMP (ping) traffic used to saturate the link.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The destination DSCP class is cs0, whereas normal traffic usually shows &#x27;not-observed&#x27;. This pushes the decision towards an attack.<div class="meta">destination DSCP class = cs0 &middot; quality-of-service class in replies &middot; strength +4.38</div><div class="bar" style="width:100%"></div></li>
+<li>The packet rate is 453.1 packets/s, higher than 99.2% of normal traffic. This pushes the decision towards an attack.<div class="meta">packet rate = 453.1 packets/s &middot; how fast packets were sent overall &middot; strength +3.21</div><div class="bar" style="width:73%"></div></li>
+<li>The hop count from the destination was recorded for this flow. This pushes the decision towards an attack.<div class="meta">hop count from the destination not measurable = no &middot; there was no hop count from the destination to measure on this flow &middot; strength +3.17</div><div class="bar" style="width:72%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Rate-limit ICMP at the gateway; confirm no diagnostic tooling is responsible before blocking.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>17.7067</code>; the model&rsquo;s actual output = <code>17.7067</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-attack">ATTACK</span><p class="title">Alert 3 &mdash; SYNFlood</p><span class="conf">confidence 99.8%</span></div>
+<table><tr><td>Severity</td><td>High</td></tr><tr><td>Flow reference</td><td>test row 85980</td></tr></table>
+<p class="what">A TCP SYN flood: half-open connections opened faster than the target can close them.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The destination DSCP class is cs0, whereas normal traffic usually shows &#x27;not-observed&#x27;. This pushes the decision towards an attack.<div class="meta">destination DSCP class = cs0 &middot; quality-of-service class in replies &middot; strength +4.38</div><div class="bar" style="width:100%"></div></li>
+<li>The TCP base sequence (source) is 1,150,275,712, lower than 99.1% of normal traffic. This pushes the decision towards an attack.<div class="meta">TCP base sequence (source) = 1,150,275,712 &middot; initial TCP sequence number from the initiator &middot; strength +3.69</div><div class="bar" style="width:84%"></div></li>
+<li>The hop count from the destination was recorded for this flow. This pushes the decision towards an attack.<div class="meta">hop count from the destination not measurable = no &middot; there was no hop count from the destination to measure on this flow &middot; strength +3.17</div><div class="bar" style="width:72%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Enable SYN cookies on the target host and rate-limit new connections from the source.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>27.8311</code>; the model&rsquo;s actual output = <code>27.8311</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-recon">ATTACK</span><p class="title">Alert 4 &mdash; SYNScan</p><span class="conf">confidence 86.2%</span></div>
+<table><tr><td>Severity</td><td>Medium - reconnaissance</td></tr><tr><td>Flow reference</td><td>test row 137164</td></tr></table>
+<p class="what">Reconnaissance. TCP SYN probes used to map which ports are open.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The source time-to-live is 37 hops, lower than virtually all normal traffic. This pushes the decision towards an attack.<div class="meta">source time-to-live = 37 hops &middot; remaining hop budget on packets from the sender &middot; strength +11.27</div><div class="bar" style="width:100%"></div></li>
+<li>The hop count from the source is 27 hops, higher than virtually all normal traffic. This pushes the decision towards an attack.<div class="meta">hop count from the source = 27 hops &middot; estimated router hops travelled from the sender &middot; strength +4.50</div><div class="bar" style="width:40%"></div></li>
+<li>The destination DSCP class is cs0, whereas normal traffic usually shows &#x27;not-observed&#x27;. This pushes the decision towards an attack.<div class="meta">destination DSCP class = cs0 &middot; quality-of-service class in replies &middot; strength +4.38</div><div class="bar" style="width:39%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Log and monitor the source. Scanning usually precedes an attack; review what it found exposed.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>32.3933</code>; the model&rsquo;s actual output = <code>32.3933</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-attack">ATTACK</span><p class="title">Alert 5 &mdash; SlowrateDoS</p><span class="conf">confidence 99.4%</span></div>
+<table><tr><td>Severity</td><td>High</td></tr><tr><td>Flow reference</td><td>test row 39494</td></tr></table>
+<p class="what">A slow-rate denial-of-service attack that holds connections open to exhaust the server&#x27;s connection pool.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The destination DSCP class is cs0, whereas normal traffic usually shows &#x27;not-observed&#x27;. This pushes the decision towards an attack.<div class="meta">destination DSCP class = cs0 &middot; quality-of-service class in replies &middot; strength +4.38</div><div class="bar" style="width:100%"></div></li>
+<li>The throughput is 1,058 bits/s, in the top 8% for normal traffic (typical: 0 bits/s). This pushes the decision towards an attack.<div class="meta">throughput = 1,058 bits/s &middot; overall data rate of the flow &middot; strength +3.25</div><div class="bar" style="width:74%"></div></li>
+<li>The hop count from the destination was recorded for this flow. This pushes the decision towards an attack.<div class="meta">hop count from the destination not measurable = no &middot; there was no hop count from the destination to measure on this flow &middot; strength +3.17</div><div class="bar" style="width:72%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Reduce the connection timeout on the target service and cap concurrent connections per source address.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>37.081</code>; the model&rsquo;s actual output = <code>37.081</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-recon">ATTACK</span><p class="title">Alert 6 &mdash; UDPScan</p><span class="conf">confidence 69.0%</span></div>
+<table><tr><td>Severity</td><td>Medium - reconnaissance</td></tr><tr><td>Flow reference</td><td>test row 215847</td></tr></table>
+<p class="what">Reconnaissance. UDP probes used to discover open UDP services.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The source time-to-live is 43 hops, lower than virtually all normal traffic. This pushes the decision towards an attack.<div class="meta">source time-to-live = 43 hops &middot; remaining hop budget on packets from the sender &middot; strength +10.50</div><div class="bar" style="width:100%"></div></li>
+<li>The destination DSCP class is cs0, whereas normal traffic usually shows &#x27;not-observed&#x27;. This pushes the decision towards an attack.<div class="meta">destination DSCP class = cs0 &middot; quality-of-service class in replies &middot; strength +4.38</div><div class="bar" style="width:42%"></div></li>
+<li>The hop count from the source is 21 hops, higher than virtually all normal traffic. This pushes the decision towards an attack.<div class="meta">hop count from the source = 21 hops &middot; estimated router hops travelled from the sender &middot; strength +3.54</div><div class="bar" style="width:34%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Log and monitor the source; review exposed UDP services.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>30.194</code>; the model&rsquo;s actual output = <code>30.194</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-attack">ATTACK</span><p class="title">Alert 7 &mdash; UDPFlood</p><span class="conf">confidence 100.0%</span></div>
+<table><tr><td>Severity</td><td>High</td></tr><tr><td>Flow reference</td><td>test row 179427</td></tr></table>
+<p class="what">A denial-of-service flood of UDP packets aimed at exhausting bandwidth or server capacity.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The throughput is 147 bits/s, in the top 9% for normal traffic (typical: 0 bits/s). This pushes the decision towards an attack.<div class="meta">throughput = 147 bits/s &middot; overall data rate of the flow &middot; strength +4.60</div><div class="bar" style="width:100%"></div></li>
+<li>The packet rate from source is 0.4 packets/s, in the top 9% for normal traffic (typical: 0.0 packets/s). This pushes the decision towards an attack.<div class="meta">packet rate from source = 0.4 packets/s &middot; sending rate of the initiator &middot; strength +2.78</div><div class="bar" style="width:60%"></div></li>
+<li>The connection state is INT, the same value normal traffic usually shows. This pushes the decision towards an attack.<div class="meta">connection state = INT &middot; how the connection ended (established, reset, request only, ...) &middot; strength +2.21</div><div class="bar" style="width:48%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">Rate-limit or block the source at the edge; verify the target service is still reachable for legitimate users.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>16.603</code>; the model&rsquo;s actual output = <code>16.603</code>. They match because the explanation is the model.</div></div>
+<div class="card"><div class="head"><span class="tag t-benign">BENIGN</span><p class="title">Alert 8 &mdash; Benign</p><span class="conf">confidence 100.0%</span></div>
+<table><tr><td>Severity</td><td>Informational</td></tr><tr><td>Flow reference</td><td>test row 83228</td></tr></table>
+<p class="what">Normal traffic. No action required.</p>
+<h3>Why the detector says so</h3><ol>
+<li>The destination time-to-live is 255 hops, higher than virtually all normal traffic. This pushes the decision towards normal traffic.<div class="meta">destination time-to-live = 255 hops &middot; remaining hop budget on replies &middot; strength +21.16</div><div class="bar" style="width:100%"></div></li>
+<li>The hop count from the destination is 1 hop, in the bottom 5% for normal traffic (typical: 5 hops). This pushes the decision towards normal traffic.<div class="meta">hop count from the destination = 1 hop &middot; estimated router hops travelled from the peer &middot; strength +17.26</div><div class="bar" style="width:82%"></div></li>
+<li>The source time-to-live is 252 hops, in the top 1% for normal traffic (typical: 63 hops). This pushes the decision towards normal traffic.<div class="meta">source time-to-live = 252 hops &middot; remaining hop budget on packets from the sender &middot; strength +13.13</div><div class="bar" style="width:62%"></div></li>
+</ol>
+<h3>Recommended first response</h3><p class="action">None.</p>
+<div class="audit">Audit trail: sum of the model&rsquo;s own terms = <code>-81.3882</code>; the model&rsquo;s actual output = <code>-81.3882</code>. They match because the explanation is the model.</div></div>
+</div>

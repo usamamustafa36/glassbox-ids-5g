@@ -1,0 +1,5 @@
+test,explanation,spearman,top5_jaccard,cosine,top3_jaccard,top1_changed_pct
+re-training (seed) stability,EBM,0.9393646186099016,0.5297619047619049,,,
+re-training (seed) stability,SHAP,0.9358766706065096,0.8,,,
+input-perturbation stability,EBM,,,0.8544225682505542,0.91125,15.75
+input-perturbation stability,SHAP,,,0.644078545132652,0.4927500000000001,54.25

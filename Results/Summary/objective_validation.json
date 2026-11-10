@@ -1,0 +1,169 @@
+{
+  "profile": "full",
+  "all_objectives_complete": true,
+  "objectives": {
+    "1": {
+      "title": "Prepare and profile the 5G-NIDD dataset and build baseline detectors, reporting both overall accuracy and the detection rate of the rare attack classes to expose the minority-class gap.",
+      "clauses_met": 5,
+      "clauses_total": 5,
+      "raw_files": 10,
+      "figures": 8
+    },
+    "2": {
+      "title": "Develop a glass-box detector (EBM) in stages - binary attack detection first, then the harder multiclass case with its severe imbalance - and measure its accuracy against black-box baselines.",
+      "clauses_met": 4,
+      "clauses_total": 4,
+      "raw_files": 6,
+      "figures": 10
+    },
+    "3": {
+      "title": "Compare the EBM's intrinsic explanations with post-hoc SHAP explanations of an XGBoost model on identical splits, in terms of clarity, stability and faithfulness.",
+      "clauses_met": 4,
+      "clauses_total": 4,
+      "raw_files": 6,
+      "figures": 6
+    },
+    "4": {
+      "title": "Evaluate how imbalance-handling techniques affect minority-class recall, and run a generalisation probe on AWID3, examining whether the kinds of features the model relies on remain informative.",
+      "clauses_met": 3,
+      "clauses_total": 3,
+      "raw_files": 8,
+      "figures": 7
+    },
+    "5": {
+      "title": "Produce a simple, analyst-readable explanation output suitable for a non-expert decision-maker.",
+      "clauses_met": 2,
+      "clauses_total": 2,
+      "raw_files": 3,
+      "figures": 9
+    }
+  },
+  "requirements": [
+    {
+      "objective": 1,
+      "clause": "Prepare the 5G-NIDD dataset",
+      "evidence": "cleaning, encoding and the fixed stratified split",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 1,
+      "clause": "Profile the dataset",
+      "evidence": "class distribution and missing-value profile",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 1,
+      "clause": "Build baseline detectors",
+      "evidence": "four literature baselines, binary and 9-class",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 1,
+      "clause": "Report overall accuracy",
+      "evidence": "accuracy for every baseline on both tasks",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 1,
+      "clause": "Report the detection rate of the rare attack classes",
+      "evidence": "per-class recall plus the aggregated minority gap",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 2,
+      "clause": "Develop a glass-box (EBM) detector - binary stage",
+      "evidence": "trained EBM with binary results against black boxes",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 2,
+      "clause": "Develop a glass-box (EBM) detector - multiclass stage",
+      "evidence": "9-class EBM under the severe imbalance",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 2,
+      "clause": "Benchmark accuracy against black-box baselines",
+      "evidence": "head-to-head comparison with a significance test",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 2,
+      "clause": "Benchmark interpretability against black-box baselines",
+      "evidence": "audit of what can be read out of each model, plus shape functions",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 3,
+      "clause": "Compare explanations on identical splits",
+      "evidence": "both explanations computed on the same held-out flows",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 3,
+      "clause": "Compare on clarity",
+      "evidence": "concentration measures for both explanations",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 3,
+      "clause": "Compare on stability",
+      "evidence": "re-training, perturbation and cross-explainer agreement",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 3,
+      "clause": "Compare on faithfulness",
+      "evidence": "exactness, deletion test and ground-truth recovery",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 4,
+      "clause": "Evaluate how imbalance techniques affect minority recall",
+      "evidence": "five training regimes measured on the untouched test split",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 4,
+      "clause": "Run a generalisation probe on AWID3",
+      "evidence": "a glass-box detector trained and scored on 802.11 data",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 4,
+      "clause": "Examine whether the kinds of features remain informative",
+      "evidence": "feature-family transfer analysis with a rank correlation",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 5,
+      "clause": "Produce a simple, analyst-readable explanation output",
+      "evidence": "alert cards in Markdown, HTML and chart form",
+      "status": "PASS",
+      "missing": ""
+    },
+    {
+      "objective": 5,
+      "clause": "Suitable for a non-expert decision-maker",
+      "evidence": "readability measurements of the generated text",
+      "status": "PASS",
+      "missing": ""
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+[
+  {
+    "row": 105218,
+    "true": "HTTPFlood",
+    "pred": "HTTPFlood",
+    "confidence": 0.9947,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "High",
+    "what_it_is": "A denial-of-service flood of HTTP requests designed to overwhelm a web service.",
+    "action": "Apply request rate-limiting for the source; check web server load and enable challenge/CAPTCHA if available.",
+    "reasons": [
+      {
+        "feature": "dDSb",
+        "readable_name": "destination DSCP class",
+        "value": 2.0,
+        "value_shown": "cs0",
+        "unit": "",
+        "measures": "quality-of-service class in replies",
+        "weight": 4.3829,
+        "comparison": "whereas normal traffic usually shows 'not-observed'",
+        "sentence": "The destination DSCP class is cs0, whereas normal traffic usually shows 'not-observed'. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "Load",
+        "readable_name": "throughput",
+        "value": 4558.56982421875,
+        "value_shown": "4,559 bits/s",
+        "unit": "bits/s",
+        "measures": "overall data rate of the flow",
+        "weight": 3.19,
+        "comparison": "in the top 8% for normal traffic (typical: 0 bits/s)",
+        "sentence": "The throughput is 4,559 bits/s, in the top 8% for normal traffic (typical: 0 bits/s). This pushes the decision towards an attack."
+      },
+      {
+        "feature": "dHops__not_observed",
+        "readable_name": "hop count from the destination not measurable",
+        "value": 0.0,
+        "value_shown": "no",
+        "unit": "",
+        "measures": "there was no hop count from the destination to measure on this flow",
+        "weight": 3.1736,
+        "comparison": "",
+        "sentence": "The hop count from the destination was recorded for this flow. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 39.218,
+      "model_log_odds": 39.218,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 224365,
+    "true": "ICMPFlood",
+    "pred": "ICMPFlood",
+    "confidence": 0.9999,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "High",
+    "what_it_is": "A flood of ICMP (ping) traffic used to saturate the link.",
+    "action": "Rate-limit ICMP at the gateway; confirm no diagnostic tooling is responsible before blocking.",
+    "reasons": [
+      {
+        "feature": "dDSb",
+        "readable_name": "destination DSCP class",
+        "value": 2.0,
+        "value_shown": "cs0",
+        "unit": "",
+        "measures": "quality-of-service class in replies",
+        "weight": 4.3829,
+        "comparison": "whereas normal traffic usually shows 'not-observed'",
+        "sentence": "The destination DSCP class is cs0, whereas normal traffic usually shows 'not-observed'. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "Rate",
+        "readable_name": "packet rate",
+        "value": 453.103759765625,
+        "value_shown": "453.1 packets/s",
+        "unit": "packets/s",
+        "measures": "how fast packets were sent overall",
+        "weight": 3.2092,
+        "comparison": "higher than 99.2% of normal traffic",
+        "sentence": "The packet rate is 453.1 packets/s, higher than 99.2% of normal traffic. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "dHops__not_observed",
+        "readable_name": "hop count from the destination not measurable",
+        "value": 0.0,
+        "value_shown": "no",
+        "unit": "",
+        "measures": "there was no hop count from the destination to measure on this flow",
+        "weight": 3.1736,
+        "comparison": "",
+        "sentence": "The hop count from the destination was recorded for this flow. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 17.7067,
+      "model_log_odds": 17.7067,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 85980,
+    "true": "SYNFlood",
+    "pred": "SYNFlood",
+    "confidence": 0.998,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "High",
+    "what_it_is": "A TCP SYN flood: half-open connections opened faster than the target can close them.",
+    "action": "Enable SYN cookies on the target host and rate-limit new connections from the source.",
+    "reasons": [
+      {
+        "feature": "dDSb",
+        "readable_name": "destination DSCP class",
+        "value": 2.0,
+        "value_shown": "cs0",
+        "unit": "",
+        "measures": "quality-of-service class in replies",
+        "weight": 4.3829,
+        "comparison": "whereas normal traffic usually shows 'not-observed'",
+        "sentence": "The destination DSCP class is cs0, whereas normal traffic usually shows 'not-observed'. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "SrcTCPBase",
+        "readable_name": "TCP base sequence (source)",
+        "value": 1150275712.0,
+        "value_shown": "1,150,275,712",
+        "unit": "",
+        "measures": "initial TCP sequence number from the initiator",
+        "weight": 3.6932,
+        "comparison": "lower than 99.1% of normal traffic",
+        "sentence": "The TCP base sequence (source) is 1,150,275,712, lower than 99.1% of normal traffic. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "dHops__not_observed",
+        "readable_name": "hop count from the destination not measurable",
+        "value": 0.0,
+        "value_shown": "no",
+        "unit": "",
+        "measures": "there was no hop count from the destination to measure on this flow",
+        "weight": 3.1736,
+        "comparison": "",
+        "sentence": "The hop count from the destination was recorded for this flow. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 27.8311,
+      "model_log_odds": 27.8311,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 137164,
+    "true": "SYNScan",
+    "pred": "SYNScan",
+    "confidence": 0.8623,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "Medium - reconnaissance",
+    "what_it_is": "Reconnaissance. TCP SYN probes used to map which ports are open.",
+    "action": "Log and monitor the source. Scanning usually precedes an attack; review what it found exposed.",
+    "reasons": [
+      {
+        "feature": "sTtl",
+        "readable_name": "source time-to-live",
+        "value": 37.0,
+        "value_shown": "37 hops",
+        "unit": "hops",
+        "measures": "remaining hop budget on packets from the sender",
+        "weight": 11.27,
+        "comparison": "lower than virtually all normal traffic",
+        "sentence": "The source time-to-live is 37 hops, lower than virtually all normal traffic. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "sHops",
+        "readable_name": "hop count from the source",
+        "value": 27.0,
+        "value_shown": "27 hops",
+        "unit": "hops",
+        "measures": "estimated router hops travelled from the sender",
+        "weight": 4.4955,
+        "comparison": "higher than virtually all normal traffic",
+        "sentence": "The hop count from the source is 27 hops, higher than virtually all normal traffic. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "dDSb",
+        "readable_name": "destination DSCP class",
+        "value": 2.0,
+        "value_shown": "cs0",
+        "unit": "",
+        "measures": "quality-of-service class in replies",
+        "weight": 4.3829,
+        "comparison": "whereas normal traffic usually shows 'not-observed'",
+        "sentence": "The destination DSCP class is cs0, whereas normal traffic usually shows 'not-observed'. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 32.3933,
+      "model_log_odds": 32.3933,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 39494,
+    "true": "SlowrateDoS",
+    "pred": "SlowrateDoS",
+    "confidence": 0.9943,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "High",
+    "what_it_is": "A slow-rate denial-of-service attack that holds connections open to exhaust the server's connection pool.",
+    "action": "Reduce the connection timeout on the target service and cap concurrent connections per source address.",
+    "reasons": [
+      {
+        "feature": "dDSb",
+        "readable_name": "destination DSCP class",
+        "value": 2.0,
+        "value_shown": "cs0",
+        "unit": "",
+        "measures": "quality-of-service class in replies",
+        "weight": 4.3829,
+        "comparison": "whereas normal traffic usually shows 'not-observed'",
+        "sentence": "The destination DSCP class is cs0, whereas normal traffic usually shows 'not-observed'. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "Load",
+        "readable_name": "throughput",
+        "value": 1058.242431640625,
+        "value_shown": "1,058 bits/s",
+        "unit": "bits/s",
+        "measures": "overall data rate of the flow",
+        "weight": 3.2475,
+        "comparison": "in the top 8% for normal traffic (typical: 0 bits/s)",
+        "sentence": "The throughput is 1,058 bits/s, in the top 8% for normal traffic (typical: 0 bits/s). This pushes the decision towards an attack."
+      },
+      {
+        "feature": "dHops__not_observed",
+        "readable_name": "hop count from the destination not measurable",
+        "value": 0.0,
+        "value_shown": "no",
+        "unit": "",
+        "measures": "there was no hop count from the destination to measure on this flow",
+        "weight": 3.1736,
+        "comparison": "",
+        "sentence": "The hop count from the destination was recorded for this flow. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 37.081,
+      "model_log_odds": 37.081,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 215847,
+    "true": "TCPConnectScan",
+    "pred": "UDPScan",
+    "confidence": 0.6897,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "Medium - reconnaissance",
+    "what_it_is": "Reconnaissance. UDP probes used to discover open UDP services.",
+    "action": "Log and monitor the source; review exposed UDP services.",
+    "reasons": [
+      {
+        "feature": "sTtl",
+        "readable_name": "source time-to-live",
+        "value": 43.0,
+        "value_shown": "43 hops",
+        "unit": "hops",
+        "measures": "remaining hop budget on packets from the sender",
+        "weight": 10.5018,
+        "comparison": "lower than virtually all normal traffic",
+        "sentence": "The source time-to-live is 43 hops, lower than virtually all normal traffic. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "dDSb",
+        "readable_name": "destination DSCP class",
+        "value": 2.0,
+        "value_shown": "cs0",
+        "unit": "",
+        "measures": "quality-of-service class in replies",
+        "weight": 4.3829,
+        "comparison": "whereas normal traffic usually shows 'not-observed'",
+        "sentence": "The destination DSCP class is cs0, whereas normal traffic usually shows 'not-observed'. This pushes the decision towards an attack."
+      },
+      {
+        "feature": "sHops",
+        "readable_name": "hop count from the source",
+        "value": 21.0,
+        "value_shown": "21 hops",
+        "unit": "hops",
+        "measures": "estimated router hops travelled from the sender",
+        "weight": 3.5387,
+        "comparison": "higher than virtually all normal traffic",
+        "sentence": "The hop count from the source is 21 hops, higher than virtually all normal traffic. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 30.194,
+      "model_log_odds": 30.194,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 179427,
+    "true": "UDPFlood",
+    "pred": "UDPFlood",
+    "confidence": 1.0,
+    "prob_attack": 1.0,
+    "verdict": "ATTACK",
+    "severity": "High",
+    "what_it_is": "A denial-of-service flood of UDP packets aimed at exhausting bandwidth or server capacity.",
+    "action": "Rate-limit or block the source at the edge; verify the target service is still reachable for legitimate users.",
+    "reasons": [
+      {
+        "feature": "Load",
+        "readable_name": "throughput",
+        "value": 147.40634155273438,
+        "value_shown": "147 bits/s",
+        "unit": "bits/s",
+        "measures": "overall data rate of the flow",
+        "weight": 4.6043,
+        "comparison": "in the top 9% for normal traffic (typical: 0 bits/s)",
+        "sentence": "The throughput is 147 bits/s, in the top 9% for normal traffic (typical: 0 bits/s). This pushes the decision towards an attack."
+      },
+      {
+        "feature": "SrcRate",
+        "readable_name": "packet rate from source",
+        "value": 0.43870899081230164,
+        "value_shown": "0.4 packets/s",
+        "unit": "packets/s",
+        "measures": "sending rate of the initiator",
+        "weight": 2.78,
+        "comparison": "in the top 9% for normal traffic (typical: 0.0 packets/s)",
+        "sentence": "The packet rate from source is 0.4 packets/s, in the top 9% for normal traffic (typical: 0.0 packets/s). This pushes the decision towards an attack."
+      },
+      {
+        "feature": "State",
+        "readable_name": "connection state",
+        "value": 4.0,
+        "value_shown": "INT",
+        "unit": "",
+        "measures": "how the connection ended (established, reset, request only, ...)",
+        "weight": 2.2139,
+        "comparison": "the same value normal traffic usually shows",
+        "sentence": "The connection state is INT, the same value normal traffic usually shows. This pushes the decision towards an attack."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": 16.603,
+      "model_log_odds": 16.603,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  },
+  {
+    "row": 83228,
+    "true": "Benign",
+    "pred": "Benign",
+    "confidence": 1.0,
+    "prob_attack": 0.0,
+    "verdict": "BENIGN",
+    "severity": "Informational",
+    "what_it_is": "Normal traffic. No action required.",
+    "action": "None.",
+    "reasons": [
+      {
+        "feature": "dTtl",
+        "readable_name": "destination time-to-live",
+        "value": 255.0,
+        "value_shown": "255 hops",
+        "unit": "hops",
+        "measures": "remaining hop budget on replies",
+        "weight": 21.1597,
+        "comparison": "higher than virtually all normal traffic",
+        "sentence": "The destination time-to-live is 255 hops, higher than virtually all normal traffic. This pushes the decision towards normal traffic."
+      },
+      {
+        "feature": "dHops",
+        "readable_name": "hop count from the destination",
+        "value": 1.0,
+        "value_shown": "1 hop",
+        "unit": "hops",
+        "measures": "estimated router hops travelled from the peer",
+        "weight": 17.2609,
+        "comparison": "in the bottom 5% for normal traffic (typical: 5 hops)",
+        "sentence": "The hop count from the destination is 1 hop, in the bottom 5% for normal traffic (typical: 5 hops). This pushes the decision towards normal traffic."
+      },
+      {
+        "feature": "sTtl",
+        "readable_name": "source time-to-live",
+        "value": 252.0,
+        "value_shown": "252 hops",
+        "unit": "hops",
+        "measures": "remaining hop budget on packets from the sender",
+        "weight": 13.1332,
+        "comparison": "in the top 1% for normal traffic (typical: 63 hops)",
+        "sentence": "The source time-to-live is 252 hops, in the top 1% for normal traffic (typical: 63 hops). This pushes the decision towards normal traffic."
+      }
+    ],
+    "audit": {
+      "model": "Explainable Boosting Machine (glass-box)",
+      "intercept": 2.2148,
+      "sum_of_all_terms_plus_intercept": -81.3882,
+      "model_log_odds": -81.3882,
+      "note": "These two numbers match because the explanation is the model, not an approximation of it."
+    }
+  }
+]

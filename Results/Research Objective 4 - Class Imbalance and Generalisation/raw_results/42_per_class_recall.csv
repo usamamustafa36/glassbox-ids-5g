@@ -1,0 +1,46 @@
+class,support,share_%,precision,recall,f1,is_minority,technique
+Benign,95547,39.291,0.8307,0.5179,0.638,False,None (baseline)
+HTTPFlood,28163,11.5812,0.9853,0.9928,0.9891,False,None (baseline)
+ICMPFlood,231,0.095,0.9914,1.0,0.9957,True,None (baseline)
+SYNFlood,1944,0.7994,0.9903,0.9938,0.992,True,None (baseline)
+SYNScan,4008,1.6482,0.9958,0.998,0.9969,True,None (baseline)
+SlowrateDoS,14625,6.0141,0.9859,0.972,0.9789,False,None (baseline)
+TCPConnectScan,4011,1.6494,0.9973,0.9978,0.9975,True,None (baseline)
+UDPFlood,91468,37.6136,0.6388,0.8899,0.7437,False,None (baseline)
+UDPScan,3181,1.3081,0.9987,0.9953,0.997,True,None (baseline)
+Benign,95547,39.291,0.8819,0.477,0.6191,False,Class weighting
+HTTPFlood,28163,11.5812,0.9885,0.9887,0.9886,False,Class weighting
+ICMPFlood,231,0.095,0.9914,1.0,0.9957,True,Class weighting
+SYNFlood,1944,0.7994,0.9903,1.0,0.9951,True,Class weighting
+SYNScan,4008,1.6482,0.9953,0.998,0.9966,True,Class weighting
+SlowrateDoS,14625,6.0141,0.9774,0.9781,0.9777,False,Class weighting
+TCPConnectScan,4011,1.6494,0.9928,0.9978,0.9953,True,Class weighting
+UDPFlood,91468,37.6136,0.6311,0.9333,0.753,False,Class weighting
+UDPScan,3181,1.3081,0.9987,0.9959,0.9973,True,Class weighting
+Benign,95547,39.291,0.9021,0.463,0.6119,False,SMOTE (SMOTENC)
+HTTPFlood,28163,11.5812,0.9856,0.9918,0.9887,False,SMOTE (SMOTENC)
+ICMPFlood,231,0.095,0.9914,1.0,0.9957,True,SMOTE (SMOTENC)
+SYNFlood,1944,0.7994,0.9888,0.999,0.9939,True,SMOTE (SMOTENC)
+SYNScan,4008,1.6482,0.9958,0.9978,0.9968,True,SMOTE (SMOTENC)
+SlowrateDoS,14625,6.0141,0.9838,0.9724,0.9781,False,SMOTE (SMOTENC)
+TCPConnectScan,4011,1.6494,0.998,0.997,0.9975,True,SMOTE (SMOTENC)
+UDPFlood,91468,37.6136,0.6283,0.9476,0.7556,False,SMOTE (SMOTENC)
+UDPScan,3181,1.3081,0.994,0.9965,0.9953,True,SMOTE (SMOTENC)
+Benign,95547,39.291,0.9089,0.4565,0.6077,False,Borderline-SMOTE
+HTTPFlood,28163,11.5812,0.9869,0.9904,0.9887,False,Borderline-SMOTE
+ICMPFlood,231,0.095,1.0,0.9957,0.9978,True,Borderline-SMOTE
+SYNFlood,1944,0.7994,0.9923,1.0,0.9962,True,Borderline-SMOTE
+SYNScan,4008,1.6482,0.9963,0.9975,0.9969,True,Borderline-SMOTE
+SlowrateDoS,14625,6.0141,0.981,0.9742,0.9776,False,Borderline-SMOTE
+TCPConnectScan,4011,1.6494,0.996,0.9975,0.9968,True,Borderline-SMOTE
+UDPFlood,91468,37.6136,0.6266,0.9522,0.7558,False,Borderline-SMOTE
+UDPScan,3181,1.3081,0.9987,0.9965,0.9976,True,Borderline-SMOTE
+Benign,95547,39.291,0.7432,0.5258,0.6159,False,Random undersampling
+HTTPFlood,28163,11.5812,0.9508,0.9636,0.9572,False,Random undersampling
+ICMPFlood,231,0.095,0.9788,1.0,0.9893,True,Random undersampling
+SYNFlood,1944,0.7994,0.9048,0.8699,0.887,True,Random undersampling
+SYNScan,4008,1.6482,0.9676,0.992,0.9797,True,Random undersampling
+SlowrateDoS,14625,6.0141,0.9101,0.9743,0.9411,False,Random undersampling
+TCPConnectScan,4011,1.6494,0.8296,0.9883,0.902,True,Random undersampling
+UDPFlood,91468,37.6136,0.6326,0.8107,0.7106,False,Random undersampling
+UDPScan,3181,1.3081,0.9987,0.9928,0.9957,True,Random undersampling

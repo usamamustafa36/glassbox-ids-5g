@@ -1,0 +1,63 @@
+{
+  "pairs": {
+    "TreeSHAP vs KernelSHAP": {
+      "spearman": 0.5857181834301128,
+      "jaccard": 0.42857142857142855
+    },
+    "TreeSHAP vs Permutation": {
+      "spearman": 0.909023371052158,
+      "jaccard": 0.42857142857142855
+    },
+    "TreeSHAP vs XGBoost gain": {
+      "spearman": 0.8889452332657201,
+      "jaccard": 0.6666666666666666
+    },
+    "KernelSHAP vs Permutation": {
+      "spearman": 0.611802038877856,
+      "jaccard": 0.1111111111111111
+    },
+    "KernelSHAP vs XGBoost gain": {
+      "spearman": 0.5456662477448664,
+      "jaccard": 0.42857142857142855
+    },
+    "Permutation vs XGBoost gain": {
+      "spearman": 0.7518918085216446,
+      "jaccard": 0.42857142857142855
+    }
+  },
+  "matrix": [
+    [
+      1.0,
+      0.5857181834301128,
+      0.909023371052158,
+      0.8889452332657201
+    ],
+    [
+      0.5857181834301128,
+      1.0,
+      0.611802038877856,
+      0.5456662477448664
+    ],
+    [
+      0.909023371052158,
+      0.611802038877856,
+      1.0,
+      0.7518918085216446
+    ],
+    [
+      0.8889452332657201,
+      0.5456662477448664,
+      0.7518918085216446,
+      1.0
+    ]
+  ],
+  "matrix_labels": [
+    "TreeSHAP",
+    "KernelSHAP",
+    "Permutation",
+    "XGBoost gain"
+  ],
+  "worst_spearman": 0.5456662477448664,
+  "worst_pair": "KernelSHAP vs XGBoost gain",
+  "mean_offdiagonal": 0.715507813815393
+}

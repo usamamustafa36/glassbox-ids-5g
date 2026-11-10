@@ -1,0 +1,28 @@
+# =====================================================================
+# Explainable Intrusion Detection for 5G  --  Python dependencies
+# ---------------------------------------------------------------------
+#   Install with:   python -m pip install -r requirements.txt
+#   Tested on:      Python 3.10 / 3.11 / 3.12  (Windows 10/11, Linux)
+# =====================================================================
+
+# --- core numerical / data stack -------------------------------------
+numpy>=1.24,<3.0
+pandas>=2.0
+scipy>=1.10
+
+# --- machine learning -------------------------------------------------
+scikit-learn>=1.3
+xgboost>=2.0                 # black-box baseline
+interpret-core>=0.6          # Explainable Boosting Machine (glass-box)
+imbalanced-learn>=0.12       # SMOTE / BorderlineSMOTE / class balancing
+
+# --- explainability ---------------------------------------------------
+shap>=0.44                   # post-hoc explanations of the black box
+
+# --- plotting ---------------------------------------------------------
+matplotlib>=3.7
+
+# --- storage / CLI presentation --------------------------------------
+pyarrow>=14.0                # parquet cache for prepared splits
+joblib>=1.3                  # model persistence
+rich>=13.0                   # live CLI progress, tables and timings

@@ -1,0 +1,10 @@
+stage,seconds,minutes
+Glass-box (EBM) detector,5075.396,84.59
+Explanation quality comparison,644.405,10.74
+Baseline detectors,477.5,7.96
+Data preparation and profiling,265.897,4.43
+Class-imbalance handling,181.647,3.03
+AWID3 generalisation probe,70.718,1.18
+Analyst-readable explanations,1.503,0.03
+Objective validation,0.023,0.0
+Summary report,0.011,0.0

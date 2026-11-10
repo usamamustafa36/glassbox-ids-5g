@@ -1,0 +1,16 @@
+{
+  "EBM (intrinsic)": {
+    "features_for_50pct": 7,
+    "features_for_90pct": 25,
+    "normalised_entropy": 0.8227881993331883,
+    "gini": 0.6278583151489168,
+    "n_features": 53
+  },
+  "SHAP on XGBoost": {
+    "features_for_50pct": 4,
+    "features_for_90pct": 13,
+    "normalised_entropy": 0.6461060192230271,
+    "gini": 0.8149273695825843,
+    "n_features": 53
+  }
+}

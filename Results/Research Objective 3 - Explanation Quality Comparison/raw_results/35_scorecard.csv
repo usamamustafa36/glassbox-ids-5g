@@ -1,0 +1,8 @@
+property,measure,ebm,shap_on_xgboost,better
+Clarity,features needed for 90% of the attribution,25,13,SHAP on XGBoost
+Stability,rank agreement across re-trainings,0.9394,0.9359,EBM
+Stability,similarity after a 1% input perturbation,0.8544,0.6441,EBM
+Stability,explanations that disagree on this model,1 (none possible),4 (worst rho=0.55),EBM
+Faithfulness,reconstruction error of the explanation,2.49e-14,1.91e-05,EBM
+Faithfulness,deletion AOPC vs its own random control,11.884,13.133,SHAP on XGBoost
+Faithfulness,error against a known ground-truth effect,0.1734,0.4113,EBM

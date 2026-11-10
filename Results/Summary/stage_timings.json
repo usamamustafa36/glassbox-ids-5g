@@ -1,0 +1,238 @@
+[
+  {
+    "stage": "Loading 5G-NIDD and taking the 'full' sample",
+    "seconds": 3.441
+  },
+  {
+    "stage": "Profiling labels, class balance and missing values",
+    "seconds": 0.34
+  },
+  {
+    "stage": "Testing the capture-order columns (Seq, Offset) on their own",
+    "seconds": 1.824
+  },
+  {
+    "stage": "Cleaning, encoding and splitting 60 / 20 / 20 (stratified)",
+    "seconds": 5.342
+  },
+  {
+    "stage": "Computing the ceiling on the prepared features",
+    "seconds": 252.921
+  },
+  {
+    "stage": "TOTAL Data preparation and profiling",
+    "seconds": 265.897
+  },
+  {
+    "stage": "Loading the prepared split",
+    "seconds": 1.102
+  },
+  {
+    "stage": "Training DecisionTree",
+    "seconds": 19.39
+  },
+  {
+    "stage": "Training LogisticRegression",
+    "seconds": 22.745
+  },
+  {
+    "stage": "Training KNN",
+    "seconds": 102.932
+  },
+  {
+    "stage": "Training RandomForest",
+    "seconds": 134.43
+  },
+  {
+    "stage": "Training DecisionTree (9 classes)",
+    "seconds": 12.79
+  },
+  {
+    "stage": "Training LogisticRegression (9 classes)",
+    "seconds": 64.115
+  },
+  {
+    "stage": "Training KNN (9 classes)",
+    "seconds": 48.437
+  },
+  {
+    "stage": "Training RandomForest (9 classes)",
+    "seconds": 54.722
+  },
+  {
+    "stage": "TOTAL Baseline detectors",
+    "seconds": 477.5
+  },
+  {
+    "stage": "Loading the prepared split",
+    "seconds": 0.355
+  },
+  {
+    "stage": "Training EBM (binary, 8 pairwise terms)",
+    "seconds": 244.579
+  },
+  {
+    "stage": "Training XGBoost (black-box reference)",
+    "seconds": 59.956
+  },
+  {
+    "stage": "Training RandomForest (black-box reference)",
+    "seconds": 174.996
+  },
+  {
+    "stage": "Training EBM (9 classes)",
+    "seconds": 3931.349
+  },
+  {
+    "stage": "Training XGBoost (9 classes)",
+    "seconds": 55.546
+  },
+  {
+    "stage": "Training RandomForest (9 classes)",
+    "seconds": 65.721
+  },
+  {
+    "stage": "Re-training EBM and XGBoost 5 times with different seeds",
+    "seconds": 521.478
+  },
+  {
+    "stage": "TOTAL Glass-box (EBM) detector",
+    "seconds": 5075.396
+  },
+  {
+    "stage": "Loading the prepared split and the trained models",
+    "seconds": 0.311
+  },
+  {
+    "stage": "Computing TreeSHAP values for the XGBoost model",
+    "seconds": 0.182
+  },
+  {
+    "stage": "Reading the EBM's own term contributions",
+    "seconds": 0.004
+  },
+  {
+    "stage": "Re-training both models 5 times and comparing their explanations",
+    "seconds": 632.629
+  },
+  {
+    "stage": "Perturbing 400 flows by 1% of each feature's spread",
+    "seconds": 0.801
+  },
+  {
+    "stage": "Running TreeSHAP, KernelSHAP, permutation importance and gain importance on one XGBoost model",
+    "seconds": 5.563
+  },
+  {
+    "stage": "Checking the additive decomposition of both explanations",
+    "seconds": 0.007
+  },
+  {
+    "stage": "Running the deletion curve over 10 steps",
+    "seconds": 0.817
+  },
+  {
+    "stage": "Fitting both models to a known generating function",
+    "seconds": 2.844
+  },
+  {
+    "stage": "TOTAL Explanation quality comparison",
+    "seconds": 644.405
+  },
+  {
+    "stage": "Loading the prepared split",
+    "seconds": 0.327
+  },
+  {
+    "stage": "None (baseline)",
+    "seconds": 17.297
+  },
+  {
+    "stage": "Class weighting",
+    "seconds": 23.455
+  },
+  {
+    "stage": "SMOTE (SMOTENC)",
+    "seconds": 81.339
+  },
+  {
+    "stage": "Borderline-SMOTE",
+    "seconds": 56.18
+  },
+  {
+    "stage": "Random undersampling",
+    "seconds": 2.402
+  },
+  {
+    "stage": "TOTAL Class-imbalance handling",
+    "seconds": 181.647
+  },
+  {
+    "stage": "Loading the cached AWID3 subset",
+    "seconds": 0.012
+  },
+  {
+    "stage": "Training an EBM on AWID3 (normal vs attack)",
+    "seconds": 70.183
+  },
+  {
+    "stage": "Aggregating both models' importance into feature families",
+    "seconds": 0.007
+  },
+  {
+    "stage": "TOTAL AWID3 generalisation probe",
+    "seconds": 70.718
+  },
+  {
+    "stage": "Loading the split and the glass-box models",
+    "seconds": 0.282
+  },
+  {
+    "stage": "Selecting 8 representative alerts",
+    "seconds": 0.589
+  },
+  {
+    "stage": "Building the cards from the model's own term contributions",
+    "seconds": 0.034
+  },
+  {
+    "stage": "Rendering cards to Markdown, HTML and PNG",
+    "seconds": 0.442
+  },
+  {
+    "stage": "TOTAL Analyst-readable explanations",
+    "seconds": 1.503
+  },
+  {
+    "stage": "Collecting results from every objective",
+    "seconds": 0.0
+  },
+  {
+    "stage": "Writing the Results index and summary",
+    "seconds": 0.001
+  },
+  {
+    "stage": "TOTAL Summary report",
+    "seconds": 0.011
+  },
+  {
+    "stage": "TOTAL Objective validation",
+    "seconds": 0.023
+  },
+  {
+    "stage": "Collecting results from every objective",
+    "seconds": 0.0
+  },
+  {
+    "stage": "Writing the Results index and summary",
+    "seconds": 0.004
+  },
+  {
+    "stage": "TOTAL Summary report",
+    "seconds": 0.015
+  },
+  {
+    "stage": "TOTAL Objective validation",
+    "seconds": 0.023
+  }
+]

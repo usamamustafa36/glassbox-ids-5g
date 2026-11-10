@@ -1,0 +1,116 @@
+{
+  "spearman": 0.2571428571428572,
+  "p_value": 0.6227871720116618,
+  "top3_overlap": 1,
+  "shared_top": [
+    "Path and signal quality"
+  ],
+  "mapping": {
+    "Rate and timing": {
+      "5g-nidd": [
+        "Rate",
+        "SrcRate",
+        "DstRate",
+        "Dur",
+        "RunTime",
+        "Mean",
+        "Min",
+        "Max",
+        "Sum",
+        "TcpRtt",
+        "SynAck",
+        "AckDat"
+      ],
+      "awid3": [
+        "frame.time_delta",
+        "frame.time_delta_displayed",
+        "wlan.duration",
+        "wlan_radio.duration"
+      ]
+    },
+    "Size and volume": {
+      "5g-nidd": [
+        "TotBytes",
+        "SrcBytes",
+        "DstBytes",
+        "sMeanPktSz",
+        "dMeanPktSz",
+        "TotPkts",
+        "SrcPkts",
+        "DstPkts",
+        "Load",
+        "SrcLoad",
+        "DstLoad"
+      ],
+      "awid3": [
+        "frame.len",
+        "radiotap.length"
+      ]
+    },
+    "Protocol and state": {
+      "5g-nidd": [
+        "Proto",
+        "State",
+        "Cause"
+      ],
+      "awid3": [
+        "wlan.fc.type",
+        "wlan.fc.subtype",
+        "wlan.fc.ds",
+        "wlan_radio.phy",
+        "frame.encap_type"
+      ]
+    },
+    "Reliability and loss": {
+      "5g-nidd": [
+        "Loss",
+        "SrcLoss",
+        "DstLoss",
+        "pLoss",
+        "SrcGap",
+        "DstGap"
+      ],
+      "awid3": [
+        "wlan.fc.retry",
+        "wlan.fc.frag",
+        "wlan.fc.moredata"
+      ]
+    },
+    "Path and signal quality": {
+      "5g-nidd": [
+        "sTtl",
+        "dTtl",
+        "sHops",
+        "dHops"
+      ],
+      "awid3": [
+        "wlan_radio.signal_dbm",
+        "radiotap.dbm_antsignal",
+        "wlan_radio.channel",
+        "wlan_radio.data_rate",
+        "wlan_radio.frequency",
+        "radiotap.channel.freq",
+        "radiotap.datarate"
+      ]
+    },
+    "Priority and control flags": {
+      "5g-nidd": [
+        "sTos",
+        "dTos",
+        "sDSb",
+        "dDSb",
+        "SrcWin",
+        "DstWin"
+      ],
+      "awid3": [
+        "wlan.fc.pwrmgt",
+        "wlan.fc.order",
+        "wlan.fc.protected",
+        "radiotap.channel.flags.ofdm",
+        "radiotap.channel.flags.cck",
+        "radiotap.rxflags",
+        "radiotap.present.tsft"
+      ]
+    }
+  }
+}

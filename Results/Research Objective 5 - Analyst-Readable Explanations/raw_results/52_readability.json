@@ -1,0 +1,9 @@
+{
+  "alerts": 8,
+  "reasons_per_alert": 3,
+  "mean_words_per_reason": 20.208333333333332,
+  "longest_reason_words": 26,
+  "reasons_containing_model_jargon": 0,
+  "cards_whose_reasons_reconstruct_the_decision_exactly": 8,
+  "extra_tools_required_to_produce_these": 0
+}

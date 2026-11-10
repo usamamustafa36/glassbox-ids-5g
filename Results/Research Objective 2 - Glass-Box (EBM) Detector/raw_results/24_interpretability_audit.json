@@ -1,0 +1,26 @@
+{
+  "Readable components": {
+    "ebm": "61 (53 curves + 8 pairwise)",
+    "xgb": "300 trees, ~12,574 split nodes"
+  },
+  "Explanation is the model": {
+    "ebm": "yes - exact",
+    "xgb": "no - needs an explainer"
+  },
+  "Global explanation": {
+    "ebm": "read off the trained model",
+    "xgb": "approximated post-hoc"
+  },
+  "Local explanation": {
+    "ebm": "exact term contributions, sum to the logit",
+    "xgb": "SHAP estimate"
+  },
+  "Explanation depends on tool choice": {
+    "ebm": "no - only one exists",
+    "xgb": "yes"
+  },
+  "Can a human audit the whole model": {
+    "ebm": "yes - 61 plots",
+    "xgb": "no - 12,574 nodes"
+  }
+}

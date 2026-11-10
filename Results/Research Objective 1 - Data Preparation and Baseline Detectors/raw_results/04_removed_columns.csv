@@ -1,0 +1,9 @@
+column,reason
+Attack Tool,label column
+Attack Type,label column
+Label,label column
+Offset,capture-order identifier (leakage)
+Seq,capture-order identifier (leakage)
+Unnamed: 0,capture-order identifier (leakage)
+dVid,99.8% missing in training data
+sVid,constant (no information)

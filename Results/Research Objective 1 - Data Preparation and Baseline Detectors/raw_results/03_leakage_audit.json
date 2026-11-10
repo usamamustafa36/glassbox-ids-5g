@@ -1,0 +1,12 @@
+{
+  "rows_used": 150000,
+  "with_leakage_accuracy": 0.9997777777777778,
+  "leaky_only_accuracy": 0.9678222222222223,
+  "clean_accuracy": 0.7659777777777778,
+  "accuracy_attributable_to_leakage": 0.2338,
+  "leaky_columns": [
+    "Seq",
+    "Offset"
+  ],
+  "note": "Seq is the Argus record sequence number and Offset the byte offset within the capture file. Because Combined.csv is a concatenation of separate benign and per-attack captures, both encode the label. They are excluded from all modelling in this project."
+}

@@ -1,0 +1,25 @@
+{
+  "runs": {
+    "EBM": [
+      0.7683836531265164,
+      0.7674954148812804,
+      0.7675365370222635,
+      0.7678655141501287,
+      0.7671129789701371
+    ],
+    "XGBoost": [
+      0.7639835840413195,
+      0.7639835840413195,
+      0.7639835840413195,
+      0.7639835840413195,
+      0.7639835840413195
+    ]
+  },
+  "test": {
+    "mean_difference": 0.0036952355887457156,
+    "t_statistic": 17.36458351641211,
+    "p_value": 6.455831970640663e-05,
+    "significant_at_5pct": true,
+    "verdict": "Statistically significant at the 5% level (p=6.456e-05); the difference of +0.00370 accuracy is, however, practically negligible."
+  }
+}

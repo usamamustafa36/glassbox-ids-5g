@@ -1,0 +1,10 @@
+class,flows,share_%,is_minority
+Benign,477737,39.2911,False
+UDPFlood,457340,37.6136,False
+HTTPFlood,140812,11.581,False
+SlowrateDoS,73124,6.014,False
+TCPConnectScan,20052,1.6492,True
+SYNScan,20043,1.6484,True
+UDPScan,15906,1.3082,True
+SYNFlood,9721,0.7995,True
+ICMPFlood,1155,0.095,True
